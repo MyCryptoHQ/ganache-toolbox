@@ -1,9 +1,8 @@
-import { transfer } from '@scripts';
 import Listr from 'listr';
 import Web3 from 'web3';
 
 import { tokens } from '@config';
-import { argsToOpts, validateOpts } from '@utils';
+import { argsToOpts, transfer, validateOpts } from '@utils';
 
 export const cli = async (args: string[]) => {
   const opts = await validateOpts(argsToOpts(args));

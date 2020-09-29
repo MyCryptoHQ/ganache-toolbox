@@ -1,3 +1,2 @@
-export { tokens } from './tokens';
-export { DAI } from './DAI';
+export { tokens, DAI, REP, LEND, GNT } from './tokens';
 export { DEFAULT_INSTANCE } from './constants';
