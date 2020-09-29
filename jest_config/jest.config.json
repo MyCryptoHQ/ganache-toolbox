@@ -10,6 +10,7 @@
     "^@(.+)$": ["<rootDir>/node_modules/$0", "<rootDir>/src/$1"]
   },
   "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/dist"],
+  "setupFiles": ["<rootDir>/jest_config/jest.setup.js"],
   "automock": false,
   "collectCoverageFrom": [
     "**/src/**/*.{js,ts}",

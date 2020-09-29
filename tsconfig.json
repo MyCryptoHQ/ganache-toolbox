@@ -9,6 +9,7 @@
     "rootDir": "./src",
     "noEmit": true,
     "skipLibCheck": true,
+    "pretty": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
@@ -30,9 +31,9 @@
     "paths": {
       "@config": ["./config"],
       "@types": ["./types"],
-      "@utils": ["./utils"],
-      "@scripts": ["./srcipts"]
+      "@utils": ["./utils"]
     },
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "exclude": ["node_modules"]
 }
