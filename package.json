@@ -1,5 +1,5 @@
 {
-  "name": "@mycrypto/ganache-toolbox",
+  "name": "ganache-toolbox",
   "version": "0.1.0",
   "description": "A simple CLI to interact with MyCrypto Ganache",
   "repository": "https://github.com/MyCryptoHQ/ganache-toolbox.git",
