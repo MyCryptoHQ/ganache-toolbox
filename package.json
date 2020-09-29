@@ -1,7 +1,8 @@
 {
-  "name": "ganache-toolbox",
+  "name": "@mycrypto/ganache-toolbox",
   "version": "0.1.0",
   "description": "A simple CLI to interact with MyCrypto Ganache",
+  "repository": "https://github.com/MyCryptoHQ/ganache-toolbox.git",
   "main": "dist/index.js",
   "bin": {
     "ganache-toolbox": "dist/index.js"
