@@ -14,13 +14,15 @@ export const cli = async (args: string[]) => {
       const key = opts.token;
       tasks.add({
         title: `Sending ${opts.token}`,
-        task: async () => await transfer(instance, opts.address, tokens[key])
+        task: async () =>
+          await transfer(instance, opts.address, tokens[key], instance.utils.toBN(opts.amount))
       });
     } else {
       Object.keys(tokens).map(async (key) => {
         tasks.add({
           title: `Sending ${key}`,
-          task: async () => await transfer(instance, opts.address, tokens[key])
+          task: async () =>
+            await transfer(instance, opts.address, tokens[key], instance.utils.toBN(opts.amount))
         });
       });
     }

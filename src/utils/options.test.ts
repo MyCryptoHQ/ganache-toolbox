@@ -14,7 +14,9 @@ describe('arguments to options', () => {
       '--address',
       'an address',
       '--token',
-      'DAI'
+      'DAI',
+      '--amount',
+      '100'
     ];
 
     const expected = argsToOpts(args);
@@ -23,7 +25,8 @@ describe('arguments to options', () => {
       skipPrompts: true,
       instance: 'https://test.com',
       address: 'an address',
-      token: 'DAI'
+      token: 'DAI',
+      amount: 100
     };
 
     expect(expected).toEqual(result);
@@ -35,7 +38,8 @@ describe('validate options', () => {
     const opts: IOptions = {
       skipPrompts: true,
       instance: DEFAULT_INSTANCE,
-      address: '0xc6D5a3c98EC9073B54FA0969957Bd582e8D874bf' as TAddress
+      address: '0xc6D5a3c98EC9073B54FA0969957Bd582e8D874bf' as TAddress,
+      amount: 100
     };
 
     const expected = await validateOpts(opts);
@@ -46,7 +50,8 @@ describe('validate options', () => {
     const opts: IOptions = {
       skipPrompts: true,
       instance: DEFAULT_INSTANCE,
-      address: 'Invalid' as TAddress
+      address: 'Invalid' as TAddress,
+      amount: 100
     };
 
     const expected = await validateOpts(opts);

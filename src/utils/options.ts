@@ -1,5 +1,5 @@
 import arg from 'arg';
-import { boolean, object, string } from 'yup';
+import { boolean, number, object, string } from 'yup';
 
 import { DEFAULT_INSTANCE, tokens } from '@config';
 import { IOptions, TAddress } from '@types';
@@ -11,7 +11,8 @@ const optsSchema = object().shape({
   address: string()
     .matches(/^0x[a-fA-F0-9]{40}$/g, 'Invalid address')
     .required(),
-  token: string().oneOf(Object.keys(tokens)).notRequired()
+  token: string().oneOf(Object.keys(tokens)).notRequired(),
+  amount: number().min(1).max(10000).notRequired()
 });
 
 export const argsToOpts = (rawArgs: string[]): IOptions => {
@@ -20,10 +21,12 @@ export const argsToOpts = (rawArgs: string[]): IOptions => {
       '--instance': String,
       '--address': String,
       '--token': String,
+      '--amount': Number,
       '--yes': Boolean,
       '-i': '--instance',
       '-a': '--address',
       '-t': '--token',
+      '-m': '--amount',
       '-y': '--yes'
     },
     {
@@ -34,7 +37,8 @@ export const argsToOpts = (rawArgs: string[]): IOptions => {
     skipPrompts: args['--yes'] || false,
     instance: args['--instance'] || DEFAULT_INSTANCE,
     address: (args['--address'] as TAddress) || ('' as TAddress),
-    token: args['--token']
+    token: args['--token'],
+    amount: args['--amount'] || 100
   };
 };
 

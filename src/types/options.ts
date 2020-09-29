@@ -5,4 +5,5 @@ export interface IOptions {
   instance: string;
   address: TAddress;
   token?: string;
+  amount: number;
 }
