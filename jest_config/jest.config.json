@@ -1,0 +1,29 @@
+{
+  "rootDir": "../",
+  "verbose": true,
+  "testRegex": "/*.*/?(.*).(spec|test).(js?|ts?)$",
+  "moduleDirectories": ["node_modules", "src"],
+  "moduleFileExtensions": ["ts", "js", "json"],
+  "modulePathIgnorePatterns": ["<rootDir>/dist", "<rootDir>/src/types"],
+  "moduleNameMapper": {
+    "test-utils": "<rootDir>/jest_config/test-utils",
+    "^@(.+)$": ["<rootDir>/node_modules/$0", "<rootDir>/src/$1"]
+  },
+  "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/dist"],
+  "automock": false,
+  "collectCoverageFrom": [
+    "**/src/**/*.{js,ts}",
+    "!**/src/types/**",
+    "!**/node_modules/**",
+    "!**/spec/**",
+    "!**/__tests__/**"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "statements": 30,
+      "branches": 25,
+      "functions": 20,
+      "lines": 30
+    }
+  }
+}

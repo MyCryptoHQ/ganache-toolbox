@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es2016",
-    "module": "es2015",
+    "target": "ES6",
+    "module": "commonjs",
     // "lib": [],
     "allowJs": true,
     "sourceMap": true,
@@ -26,12 +26,12 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "baseUrl": "./src",
     "paths": {
       "@config": ["./config"],
       "@types": ["./types"],
-      "@utils": ["./utils"]
+      "@utils": ["./utils"],
+      "@scripts": ["./srcipts"]
     },
     "allowSyntheticDefaultImports": true
   }

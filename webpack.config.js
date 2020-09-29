@@ -27,10 +27,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts'],
+    plugins: [new TsconfigPathsPlugin({ configFile: path.resolve(__dirname, './tsconfig.json') })]
   },
-  plugins: [
-    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
-    new TsconfigPathsPlugin({ configFile: path.resolve(__dirname, './tsconfig.json') })
-  ]
+  plugins: [new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })]
 };
