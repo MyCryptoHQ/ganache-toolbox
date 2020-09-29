@@ -17,7 +17,9 @@
     "build": "webpack --config ./webpack.config.js --progress --color --display-error-details",
     "clean": "rimraf dist",
     "start": "babel-node --extensions '.ts' ./src/index.ts",
+    "validate": "npm-run-all --parallel lint tscheck",
     "test": "jest --config=jest_config/jest.config.json --maxWorkers=2",
+    "test:coverage": "yarn test --coverage",
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.js",
     "prettier": "prettier --write --config .prettierrc --config-precedence file-override",
     "tscheck": "tsc"
@@ -62,6 +64,7 @@
     "jasmine-marbles": "0.3.1",
     "jest": "26.0.1",
     "lint-staged": "10.4.0",
+    "npm-run-all": "4.1.5",
     "prettier": "2.1.2",
     "rimraf": "2.6.2",
     "ts-jest": "24.3.0",
