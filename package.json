@@ -1,6 +1,6 @@
 {
   "name": "ganache-toolbox",
-  "version": "1.0.2",
+  "version": "0.1.0",
   "description": "A simple CLI to interact with MyCrypto Ganache",
   "main": "dist/index.js",
   "bin": {
