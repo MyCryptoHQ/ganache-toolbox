@@ -9,7 +9,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "MyCryptoHQ",
+  "author": "MyCrypto",
   "license": "MIT",
   "scripts": {
     "prebuild": "yarn clean",
@@ -42,6 +42,7 @@
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
     "@babel/node": "7.0.0",
+    "@babel/polyfill": "7.11.5",
     "@babel/preset-env": "7.0.0",
     "@babel/preset-typescript": "7.0.0",
     "@types/inquirer": "7.3.1",
