@@ -1,8 +1,8 @@
-import arg from 'arg';
+import yargs from 'yargs';
 import { boolean, number, object, string } from 'yup';
 
-import { DEFAULT_INSTANCE, tokens } from '@config';
-import { IOptions, TAddress } from '@types';
+import { DEFAULT_INSTANCE, options, tokens } from '@config';
+import { IOptions, IYargsObject, TAddress } from '@types';
 import { handleOptsErrors } from '@utils';
 
 const optsSchema = object().shape({
@@ -15,30 +15,16 @@ const optsSchema = object().shape({
   amount: number().min(1).max(10000).notRequired()
 });
 
-export const argsToOpts = (rawArgs: string[]): IOptions => {
-  const args = arg(
-    {
-      '--instance': String,
-      '--address': String,
-      '--token': String,
-      '--amount': Number,
-      '--yes': Boolean,
-      '-i': '--instance',
-      '-a': '--address',
-      '-t': '--token',
-      '-m': '--amount',
-      '-y': '--yes'
-    },
-    {
-      argv: rawArgs.slice(2)
-    }
-  );
+export const argsToOpts = (): IOptions => {
+  const args: IYargsObject = yargs.usage('Usage: ganache-toolbox -a <address>').options(options)
+    .argv as IYargsObject;
+  console.log(args);
   return {
-    skipPrompts: args['--yes'] || false,
-    instance: args['--instance'] || DEFAULT_INSTANCE,
-    address: (args['--address'] as TAddress) || ('' as TAddress),
-    token: args['--token'],
-    amount: args['--amount'] || 100
+    skipPrompts: args.y || false,
+    instance: args.i || DEFAULT_INSTANCE,
+    address: args.a || ('' as TAddress),
+    token: args.t as string,
+    amount: args.m || 100
   };
 };
 

@@ -4,8 +4,8 @@ import Web3 from 'web3';
 import { tokens } from '@config';
 import { argsToOpts, transfer, validateOpts } from '@utils';
 
-export const cli = async (args: string[]) => {
-  const opts = await validateOpts(argsToOpts(args));
+export const cli = async () => {
+  const opts = await validateOpts(argsToOpts());
   if (opts) {
     const instance = new Web3(opts.instance);
     const tasks = new Listr([], { exitOnError: false });

@@ -1,37 +1,7 @@
 import { DEFAULT_INSTANCE } from '@config';
 import { IOptions, TAddress } from '@types';
 
-import { argsToOpts, validateOpts } from './options';
-
-describe('arguments to options', () => {
-  it('transform array of arguments into options object', () => {
-    const args = [
-      'node',
-      '/bin/exec',
-      '--yes',
-      '--instance',
-      'https://test.com',
-      '--address',
-      'an address',
-      '--token',
-      'DAI',
-      '--amount',
-      '100'
-    ];
-
-    const expected = argsToOpts(args);
-
-    const result = {
-      skipPrompts: true,
-      instance: 'https://test.com',
-      address: 'an address',
-      token: 'DAI',
-      amount: 100
-    };
-
-    expect(expected).toEqual(result);
-  });
-});
+import { validateOpts } from './options';
 
 describe('validate options', () => {
   it('return options when valid', async () => {
@@ -47,6 +17,8 @@ describe('validate options', () => {
     expect(expected).toEqual(opts);
   });
   it('return undefinded when skipPrompts is passed and options are invalid', async () => {
+    const spy = jest.spyOn(console, 'log');
+
     const opts: IOptions = {
       skipPrompts: true,
       instance: DEFAULT_INSTANCE,
@@ -57,5 +29,6 @@ describe('validate options', () => {
     const expected = await validateOpts(opts);
 
     expect(expected).toBeUndefined();
+    expect(spy).toHaveBeenCalled();
   });
 });
