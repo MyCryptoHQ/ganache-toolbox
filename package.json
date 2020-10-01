@@ -1,6 +1,6 @@
 {
   "name": "@mycrypto/ganache-toolbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "MyCrypto",
   "license": "MIT",
   "description": "A simple CLI to interact with MyCrypto Ganache",

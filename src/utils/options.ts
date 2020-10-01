@@ -19,7 +19,6 @@ export const argsToOpts = (): IOptions => {
   const args: IYargsObject = yargs
     .usage('Usage: ganache-toolbox -a <address> -i <instance_url>')
     .options(options).argv as IYargsObject;
-  console.log(args);
   return {
     skipPrompts: args.y || false,
     instance: args.i,
