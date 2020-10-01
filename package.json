@@ -7,8 +7,7 @@
   "repository": "https://github.com/MyCryptoHQ/ganache-toolbox.git",
   "main": "dist/index.js",
   "bin": {
-    "ganache-toolbox": "dist/index.js",
-    "@mycrypto/ganache-toolbox": "dist/index.js"
+    "ganache-toolbox": "dist/index.js"
   },
   "files": [
     "bin/",
