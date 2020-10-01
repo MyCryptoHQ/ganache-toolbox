@@ -6,7 +6,7 @@ export const options: IArgs = {
     describe: 'The Ganache node URL',
     type: 'string',
     requiresArg: true,
-    demandOption: false
+    demandOption: true
   },
   a: {
     alias: 'address',

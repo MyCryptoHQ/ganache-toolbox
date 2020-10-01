@@ -33,6 +33,9 @@ export const REP: IToken = {
 export const tokens: TTokens = {
   DAI,
   LEND,
-  REP,
+  /*
+    REP disabled since contract doesn't allow transfers or minting anymore
+    REP,
+  */
   GNT
 };

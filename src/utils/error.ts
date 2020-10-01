@@ -2,7 +2,7 @@ import { red } from 'chalk';
 import inquirer from 'inquirer';
 import { ValidationError } from 'yup';
 
-import { DEFAULT_INSTANCE, tokens } from '@config';
+import { tokens } from '@config';
 import { IOptions } from '@types';
 
 export const handleOptsErrors = async (opts: IOptions, err: ValidationError) => {
@@ -28,8 +28,7 @@ export const handleOptsErrors = async (opts: IOptions, err: ValidationError) => 
           questions.push({
             type: 'input',
             name: 'instance',
-            message: `Ganache instance should be an url, please enter a valid url`,
-            default: DEFAULT_INSTANCE
+            message: `Ganache instance should be an url, please enter a valid url`
           });
           break;
         case 'address':

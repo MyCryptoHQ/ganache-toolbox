@@ -27,19 +27,19 @@ npx ganache-toolbox [...]
 
 ```bash
 # To fund your account with 100 of each tokens the CLI support
-ganache-toolbox --address [ your_address ]
+ganache-toolbox --address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Advanced usage
 
 ```bash
 # To fund your account with one of the supported tokens
-ganache-toolbox -address [ your_address ] --token [ DAI | REP | LEND | GNT ]
+ganache-toolbox -address [ your_address ] --instance [ instance_url ] --token [ DAI | REP | LEND | GNT ]
 ```
 
 ```bash
 # Specify the amount of tokens you want to be funded.
-ganache-toolbox -address [ your_address ] --amount [0...10000]
+ganache-toolbox -address [ your_address ] --instance [ instance_url ] --amount [0...10000]
 ```
 
 ### Skipping prompt
@@ -48,13 +48,13 @@ ganache-toolbox could ask you, if not used correctly, to correct your passed arg
 
 ```bash
 # To disable prompting
-ganache-toolbox --yes -address [ your_address ]
+ganache-toolbox --yes -address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Available flags
 
 - `--yes` / `-y` : Disable prompt
-- `--instance` / `-i`: URL of your ganache node (defaults to `https://ganache.mycrypto.com`)
+- `--instance` / `-i`: URL of your ganache node
 - `--address` / `-a`: The Ethereum address where the CLI will send the token(s)
 - `--token` / `-t`: The available token you want to be found (Actually available: `DAI, REP, LEND ,GNT`)
 - `--amount` / `-m`: The amount of tokens you want

@@ -1,13 +1,13 @@
 import yargs from 'yargs';
 import { boolean, number, object, string } from 'yup';
 
-import { DEFAULT_INSTANCE, options, tokens } from '@config';
+import { options, tokens } from '@config';
 import { IOptions, IYargsObject, TAddress } from '@types';
 import { handleOptsErrors } from '@utils';
 
 const optsSchema = object().shape({
   skipPrompt: boolean(),
-  instance: string().url().notRequired(),
+  instance: string().url(),
   address: string()
     .matches(/^0x[a-fA-F0-9]{40}$/g, 'Invalid address')
     .required(),
@@ -16,12 +16,13 @@ const optsSchema = object().shape({
 });
 
 export const argsToOpts = (): IOptions => {
-  const args: IYargsObject = yargs.usage('Usage: ganache-toolbox -a <address>').options(options)
-    .argv as IYargsObject;
+  const args: IYargsObject = yargs
+    .usage('Usage: ganache-toolbox -a <address> -i <instance_url>')
+    .options(options).argv as IYargsObject;
   console.log(args);
   return {
     skipPrompts: args.y || false,
-    instance: args.i || DEFAULT_INSTANCE,
+    instance: args.i,
     address: args.a || ('' as TAddress),
     token: args.t as string,
     amount: args.m || 100
