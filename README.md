@@ -12,13 +12,13 @@ Ganache Toolbox is a simple CLI to fund a Ganache test account with relevant tok
 With `npm`
 
 ```bash
-npm install -g ganache-toolbox
+npm install -g @mycrypto/ganache-toolbox
 ```
 
 Alternatively you can use `npx` to use the CLI without installing it
 
 ```bash
-npx ganache-toolbox [...]
+npx @mycrypto/ganache-toolbox [...]
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ npx ganache-toolbox [...]
 
 ```bash
 # To fund your account with 100 of each tokens the CLI support
-ganache-toolbox --address [ your_address ] --instance [ instance_url ]
+@mycrypto/ganache-toolbox --address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Advanced usage
 
 ```bash
 # To fund your account with one of the supported tokens
-ganache-toolbox -address [ your_address ] --instance [ instance_url ] --token [ DAI | REP | LEND | GNT ]
+@mycrypto/ganache-toolbox -address [ your_address ] --instance [ instance_url ] --token [ DAI | REP | LEND | GNT ]
 ```
 
 ```bash
 # Specify the amount of tokens you want to be funded.
-ganache-toolbox -address [ your_address ] --instance [ instance_url ] --amount [0...10000]
+@mycrypto/ganache-toolbox -address [ your_address ] --instance [ instance_url ] --amount [0...10000]
 ```
 
 ### Skipping prompt
@@ -48,7 +48,7 @@ ganache-toolbox could ask you, if not used correctly, to correct your passed arg
 
 ```bash
 # To disable prompting
-ganache-toolbox --yes -address [ your_address ] --instance [ instance_url ]
+@mycrypto/ganache-toolbox --yes -address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Available flags
