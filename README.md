@@ -27,19 +27,19 @@ npx @mycrypto/ganache-toolbox [...]
 
 ```bash
 # To fund your account with 100 of each tokens the CLI support
-@mycrypto/ganache-toolbox --address [ your_address ] --instance [ instance_url ]
+ganache-toolbox --address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Advanced usage
 
 ```bash
 # To fund your account with one of the supported tokens
-@mycrypto/ganache-toolbox -address [ your_address ] --instance [ instance_url ] --token [ DAI | REP | LEND | GNT ]
+ganache-toolbox -address [ your_address ] --instance [ instance_url ] --token [ DAI | REP | LEND | GNT ]
 ```
 
 ```bash
 # Specify the amount of tokens you want to be funded.
-@mycrypto/ganache-toolbox -address [ your_address ] --instance [ instance_url ] --amount [0...10000]
+ganache-toolbox -address [ your_address ] --instance [ instance_url ] --amount [0...10000]
 ```
 
 ### Skipping prompt
@@ -48,7 +48,7 @@ ganache-toolbox could ask you, if not used correctly, to correct your passed arg
 
 ```bash
 # To disable prompting
-@mycrypto/ganache-toolbox --yes -address [ your_address ] --instance [ instance_url ]
+ganache-toolbox --yes -address [ your_address ] --instance [ instance_url ]
 ```
 
 ### Available flags
