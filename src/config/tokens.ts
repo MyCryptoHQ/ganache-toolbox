@@ -20,7 +20,7 @@ export const LEND: IToken = {
   ABI: ABI.LEND,
   address: '0x80fB784B7eD66730e8b1DBd9820aFD29931aab03' as TAddress,
   name: 'LEND',
-  fromAddress: '0xbe0eb53f46cd790cd13851d5eff43d12404d33e8' as TAddress
+  fromAddress: '0x7BfeA1979e58AA73beB34D4577272B5Ba16479fD' as TAddress
 };
 
 export const REP: IToken = {
@@ -33,9 +33,6 @@ export const REP: IToken = {
 export const tokens: TTokens = {
   DAI,
   LEND,
-  /*
-    REP disabled since contract doesn't allow transfers or minting anymore
-    REP,
-  */
+  REP,
   GNT
 };
